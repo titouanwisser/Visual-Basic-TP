@@ -4,7 +4,7 @@
         Dim nbr_note_sup_10 As Integer
         Console.WriteLine("Entrez une note (-1 pour fin) :")
         note = Console.ReadLine()
-        While note >= -1
+        While note > -1
             If note > 10 Then
                 nbr_note_sup_10 = nbr_note_sup_10 + 1
             End If
