@@ -1,7 +1,26 @@
-﻿Module Exercice_11_1
+﻿Imports System.Net.NetworkInformation
+
+Module Exercice_11_1
+
+    Function PérimètreCercle(ByVal rX As Decimal) As Decimal
+        Return 2 * 3.1415926535897931 * rX
+    End Function
+
+    Function SurfaceCercle(ByVal rX As Decimal) As Decimal
+        Return rX * rX * 3.1415926535897931
+    End Function
+
+    Function PérimètreRectangle(ByVal loR As Decimal, ByVal laR As Decimal) As Decimal
+        Return (loR + laR) * 2
+    End Function
+
+    Function SurfaceRectangle(ByVal loR As Decimal, ByVal laR As Decimal) As Decimal
+        Return loR * laR
+    End Function
+
     Sub Main()
         Dim choix As Integer
-        Dim rayon_cercle, périmètre_cercle, surface_cercle, longueur_rectangle, largeur_rectangle, périmètre_rectangle, surface_rectangle, pi As Decimal
+        Dim rx, loR, laR, pi As Decimal
         pi = 3.1415926535897931
         Console.WriteLine("1. Calcul du périmètre d'un cercle.")
         Console.WriteLine("2. Calcul de la surface d'un cercle.")
@@ -15,76 +34,72 @@
 
                 Case 1
                     Console.WriteLine("Quel est le rayon du cercle ? (Rayon > 0)")
-                    rayon_cercle = Console.ReadLine()
-                    If rayon_cercle <= 0 Then
+                    rX = Console.ReadLine()
+                    If rX <= 0 Then
                         Do
                             Console.WriteLine("Le rayon doit être supérieur à 0 !")
                             Console.WriteLine("Quel est le rayon du cercle ? (Rayon > 0)")
-                            rayon_cercle = Console.ReadLine()
-                        Loop Until rayon_cercle > 0
+                            rx = Console.ReadLine()
+                        Loop Until rX > 0
                     End If
-                    périmètre_cercle = 2 * pi * rayon_cercle
-                    Console.WriteLine("Le périmètre du cerle est de " + périmètre_cercle.ToString())
+                    Console.WriteLine("Le périmètre du cerle est de " + PérimètreCercle(rx).ToString())
                     Console.WriteLine(". . . Rappel menu . . .")
 
                 Case 2
                     Console.WriteLine("Quel est le rayon du cercle ? (Rayon > 0)")
-                    rayon_cercle = Console.ReadLine()
-                    If rayon_cercle <= 0 Then
+                    rx = Console.ReadLine()
+                    If rx <= 0 Then
                         Do
                             Console.WriteLine("Le rayon doit être supérieur à 0 !")
                             Console.WriteLine("Quel est le rayon du cercle ? (Rayon > 0)")
-                            rayon_cercle = Console.ReadLine()
-                        Loop Until rayon_cercle > 0
+                            rx = Console.ReadLine()
+                        Loop Until rX > 0
                     End If
-                    surface_cercle = rayon_cercle * rayon_cercle * pi
-                    Console.WriteLine("La surface du cerle est de " + surface_cercle.ToString())
+                    Console.WriteLine("La surface du cerle est de " + SurfaceCercle(rx).ToString())
                     Console.WriteLine(". . . Rappel menu . . .")
 
                 Case 3
                     Console.WriteLine("Quelle est la longueur du rectangle ? (Longueur > 0)")
-                    longueur_rectangle = Console.ReadLine()
+                    loR = Console.ReadLine()
                     Console.WriteLine("Quelle est la largeur du rectangle ? (Largeur > 0)")
-                    largeur_rectangle = Console.ReadLine()
-                    If longueur_rectangle <= 0 Then
+                    laR = Console.ReadLine()
+                    If loR <= 0 Then
                         Do
                             Console.WriteLine("La longueur doit être supérieure à 0 !")
                             Console.WriteLine("Quelle est la longueur du rectangle ? (Longueur > 0)")
-                            longueur_rectangle = Console.ReadLine()
-                        Loop Until longueur_rectangle > 0
+                            loR = Console.ReadLine()
+                        Loop Until loR > 0
                     End If
-                    If largeur_rectangle <= 0 Then
+                    If laR <= 0 Then
                         Do
                             Console.WriteLine("La largeur doit être supérieure à 0 !")
                             Console.WriteLine("Quelle est la largeur du rectangle ? (Largeur > 0)")
-                            largeur_rectangle = Console.ReadLine()
-                        Loop Until largeur_rectangle > 0
+                            laR = Console.ReadLine()
+                        Loop Until laR > 0
                     End If
-                    périmètre_rectangle = (longueur_rectangle + largeur_rectangle) * 2
-                    Console.WriteLine("Le périmètre du rectangle est de " + périmètre_rectangle.ToString())
+                    Console.WriteLine("Le périmètre du rectangle est de " + PérimètreRectangle(loR, laR).ToString())
                     Console.WriteLine(". . . Rappel menu . . .")
 
                 Case 4
                     Console.WriteLine("Quelle est la longueur du rectangle ? (Longueur > 0)")
-                    longueur_rectangle = Console.ReadLine()
+                    loR = Console.ReadLine()
                     Console.WriteLine("Quelle est la largeur du rectangle ? (Largeur > 0)")
-                    largeur_rectangle = Console.ReadLine()
-                    If longueur_rectangle <= 0 Then
+                    laR = Console.ReadLine()
+                    If loR <= 0 Then
                         Do
                             Console.WriteLine("La longueur doit être supérieure à 0 !")
                             Console.WriteLine("Quelle est la longueur du rectangle ? (Longueur > 0)")
-                            longueur_rectangle = Console.ReadLine()
-                        Loop Until longueur_rectangle > 0
+                            loR = Console.ReadLine()
+                        Loop Until loR > 0
                     End If
-                    If largeur_rectangle <= 0 Then
+                    If laR <= 0 Then
                         Do
                             Console.WriteLine("La largeur doit être supérieure à 0 !")
                             Console.WriteLine("Quelle est la largeur du rectangle ? (Largeur > 0)")
-                            largeur_rectangle = Console.ReadLine()
-                        Loop Until largeur_rectangle > 0
+                            laR = Console.ReadLine()
+                        Loop Until laR > 0
                     End If
-                    surface_rectangle = longueur_rectangle * largeur_rectangle
-                    Console.WriteLine("La surface du rectangle est de " + surface_rectangle.ToString())
+                    Console.WriteLine("La surface du rectangle est de " + SurfaceRectangle(loR, laR).ToString())
                     Console.WriteLine(". . . Rappel menu . . .")
 
                 Case 5
