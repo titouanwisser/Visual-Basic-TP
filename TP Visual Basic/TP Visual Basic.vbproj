@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E7DB8E26-2828-49C6-881D-50CA3B55AD3A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>TP_Visual_Basic.IntroductionTableauxV2</StartupObject>
+    <StartupObject>TP_Visual_Basic.Exercice_13_1_2</StartupObject>
     <RootNamespace>TP_Visual_Basic</RootNamespace>
     <AssemblyName>TP Visual Basic</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -73,6 +73,8 @@
     <Compile Include="Exercice_11_2.vb" />
     <Compile Include="Exercice_11_3.vb" />
     <Compile Include="Exercice_11_4.vb" />
+    <Compile Include="Exercice_13_1_1.vb" />
+    <Compile Include="Exercice_13_1_2.vb" />
     <Compile Include="Exercice_7_1.vb" />
     <Compile Include="Exercice_7_2.vb" />
     <Compile Include="Exercice_7_3.vb" />
@@ -80,7 +82,6 @@
     <Compile Include="Exercice_9_2.vb" />
     <Compile Include="Exercice_9_3.vb" />
     <Compile Include="Exercice_9_4.vb" />
-    <Compile Include="IntroductionTableauxV2.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

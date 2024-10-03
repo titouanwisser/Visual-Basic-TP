@@ -2,7 +2,7 @@
 
     Sub main()
         Dim reponse As String
-        Dim choix, compteur, compteur_fois, nombre_etoiles, nombre_espaces, compteur_etoiles, compteur_espaces As Integer
+        Dim choix, compteur_fois, nombre_etoiles, nombre_espaces, compteur_etoiles, compteur_espaces As Integer
         Do
             Console.WriteLine("Combien de lignes pour votre triangle ? (>= 0)")
             choix = Console.ReadLine()
