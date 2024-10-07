@@ -12,6 +12,7 @@
                 Loop Until nombres(noNombre) >= 0 And nombres(noNombre) <= 20
             Next
             min = nombres(0)
+            ' Je remplis la valeur temporairement par la 1ère case du tableau afin de pouvoir la comparer aux autres
             For noNombre = 0 To nbr_nbrs - 1
                 If nombres(noNombre) < min Then
                     min = nombres(noNombre)
