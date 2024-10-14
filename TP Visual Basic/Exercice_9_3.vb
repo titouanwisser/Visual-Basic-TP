@@ -10,7 +10,7 @@
             If choix < 0 Then
                 Do
                     Console.WriteLine("La valeur doit être supérieure à 0 !")
-                    Console.WriteLine("Jusqu'à combien voulez vous allez ? (>0)")
+                    Console.WriteLine("Jusqu'à combien voulez vous aller ? (>0)")
                     choix = Console.ReadLine()
                 Loop Until choix > 0
             End If
