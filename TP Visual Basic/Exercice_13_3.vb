@@ -4,18 +4,15 @@
     Const MAXTRANCHES As Integer = 10
 
     Sub Initialiser(ByRef pTab(,,) As Integer)
+        Dim noSalle, noJour, noTranche As Integer
 
-        ' Parcours du tableau à 3 dimensions; toutes les cases sont mises à 0
-
-        ' (on considère ici que toutes les salles sont libres, par défaut)
-
-        ' Le parcours début à 1, les cases en "0" sont perdues
-
-        ' ! ! ! ! !
-
-        ' ! ! ! ! ! A COMPLETER ! ! ! ! !
-
-        ' ! ! ! ! !
+        For noSalle = 1 To 10
+            For noJour = 1 To 6
+                For noTranche = 1 To 10
+                    pTab(noSalle, noJour, noTranche) = 0
+                Next
+            Next
+        Next
 
     End Sub
 
@@ -24,11 +21,9 @@
         Dim capaciteLue, heureLue, jourLu, occupation(MAXSALLES, MAXJOURS, MAXTRANCHES) As Integer
 
         Dim capacité() As Integer = {20, 40, 30, 20, 10,
-                                    50, 10, 20, 20, 25} 'la première ne sera pas
+                                    50, 10, 20, 20, 25}
 
         Initialiser(occupation)
-
-        ' On place quelques cases à "occupée", choisies arbitrairement
 
         occupation(3, 2, 4) = 1
         occupation(1, 1, 1) = 1
@@ -41,22 +36,35 @@
         Do
             Console.WriteLine("Jour ?")
             jourLu = Console.ReadLine()
-            If jourLu < 0 Or jourLu > 7 Then
+            If jourLu < 0 Or jourLu > 6 Then
                 Console.WriteLine("La valeur n'est pas correcte !")
             End If
         Loop Until jourLu > 0 And jourLu <= 6
         Do
             Console.WriteLine("Tranche horaire ?")
             heureLue = Console.ReadLine()
-            If heureLue < 0 Or heureLue > 10 Then
+            If heureLue <= 0 Or heureLue > 10 Then
                 Console.WriteLine("La valeur n'est pas correcte !")
             End If
         Loop Until heureLue > 0 And heureLue <= 10
         Do
             Console.WriteLine("Capacité ?")
             capaciteLue = Console.ReadLine()
-        Loop Until capaciteLue
+            If capaciteLue <= 0 Then
+                Console.WriteLine("La valeur n'est pas correcte !")
+            End If
+        Loop Until capaciteLue > 0
+        Console.Write("Les salles ")
 
+        For salle = 1 To MAXSALLES
+            If occupation(salle, jourLu, heureLue) = 0 Then
+                If capacité(salle - 1) > capaciteLue Then
+                    Console.Write((salle).ToString() + ", ")
+                End If
+            End If
+        Next
+
+        Console.Write("sont disponibles.")
 
         Console.ReadLine()
 
