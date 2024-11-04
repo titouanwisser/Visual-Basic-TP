@@ -9,6 +9,25 @@
         Next
     End Sub
 
+    Sub Echanger(ByRef pA As Double, ByRef pB As Double)
+        Dim pIntermediaire As Double
+        pIntermediaire = pA
+        pA = pB
+        pB = pIntermediaire
+    End Sub
+
+    Sub InverserLesNombres(ByRef tableau(,) As Double)
+        For noLigne = 0 To 3
+            For noColonne = 0 To 3
+                Echanger(noLigne, noColonne)
+                Console.Write(tableau(noLigne, noColonne).ToString + vbTab)
+                Echanger(noLigne, noColonne)
+            Next
+            Console.WriteLine()
+        Next
+        ' modifier ce sub pour intégrer le sub échanger qui permet d'inverser les nombres dans les cases.
+    End Sub
+
     Sub Main()
         Dim lesNombres(,) As Double = {
         {1, 2, 3, 4},
@@ -19,7 +38,7 @@
         Console.WriteLine("Matrice avant inversion :")
         AfficherLesNombres(lesNombres)
         Console.WriteLine("Matrice après inversion :")
-
+        InverserLesNombres(lesNombres)
         Console.ReadLine()
     End Sub
 End Module
