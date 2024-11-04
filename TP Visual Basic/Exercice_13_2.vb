@@ -18,12 +18,9 @@
 
     Sub InverserLesNombres(ByRef tableau(,) As Double)
         For noLigne = 0 To 3
-            For noColonne = 0 To 3
-                Echanger(noLigne, noColonne)
-                Console.Write(tableau(noLigne, noColonne).ToString + vbTab)
-                Echanger(noLigne, noColonne)
+            For noColonne = noLigne + 1 To 3
+                Echanger(tableau(noLigne, noColonne), tableau(noColonne, noLigne))
             Next
-            Console.WriteLine()
         Next
         ' modifier ce sub pour intégrer le sub échanger qui permet d'inverser les nombres dans les cases.
     End Sub
@@ -39,6 +36,7 @@
         AfficherLesNombres(lesNombres)
         Console.WriteLine("Matrice après inversion :")
         InverserLesNombres(lesNombres)
+        AfficherLesNombres(lesNombres)
         Console.ReadLine()
     End Sub
 End Module

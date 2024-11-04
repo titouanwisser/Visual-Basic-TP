@@ -38,11 +38,25 @@
         occupation(8, 3, 2) = 1
         occupation(5, 3, 3) = 1
 
-        ' ! ! ! ! !
+        Do
+            Console.WriteLine("Jour ?")
+            jourLu = Console.ReadLine()
+            If jourLu < 0 Or jourLu > 7 Then
+                Console.WriteLine("La valeur n'est pas correcte !")
+            End If
+        Loop Until jourLu > 0 And jourLu <= 6
+        Do
+            Console.WriteLine("Tranche horaire ?")
+            heureLue = Console.ReadLine()
+            If heureLue < 0 Or heureLue > 10 Then
+                Console.WriteLine("La valeur n'est pas correcte !")
+            End If
+        Loop Until heureLue > 0 And heureLue <= 10
+        Do
+            Console.WriteLine("Capacité ?")
+            capaciteLue = Console.ReadLine()
+        Loop Until capaciteLue
 
-        ' ! ! ! ! ! A COMPLETER ! ! ! ! !
-
-        ' ! ! ! ! !
 
         Console.ReadLine()
 
